@@ -100,6 +100,7 @@
     .nav-logo,
     .nav-logo-small {
       vertical-align: sub;
+      width: 100px;
     }
 
     .nav-logo-small {
@@ -282,7 +283,7 @@
 </style>
 <template>
   <div class="headerWrapper">
-    <div id="v3-banner" v-if="isHome">
+    <!-- <div id="v3-banner" v-if="isHome">
       <template v-if="lang === 'zh-CN'">
         您正在浏览基于 Vue 2.x 的 Element UI 文档;
         <a href="https://element-plus.org/#/zh-CN">点击这里</a> 查看 Vue 3.x 的升级版本
@@ -291,18 +292,18 @@
         You’re browsing the documentation of Element UI for Vue 2.x version.
         <a href="https://element-plus.org">Click here</a> for Vue 3.x version
       </template>
-    </div>
+    </div> -->
     <header class="header" ref="header">
       <div class="container">
         <h1><router-link :to="`/${ lang }`">
           <!-- logo -->
           <slot>
             <img
-              src="../assets/images/element-logo.svg"
+              src="../assets/images/img-logo.png"
               alt="element-logo"
               class="nav-logo">
             <img
-              src="../assets/images/element-logo-small.svg"
+              src="../assets/images/img-logo.png"
               alt="element-logo"
               class="nav-logo-small">
           </slot>
@@ -314,41 +315,47 @@
           <li class="nav-item nav-algolia-search" v-show="isComponentPage">
             <algolia-search></algolia-search>
           </li>
-          <li class="nav-item">
+
+          <!-- 指南 -->
+          <!-- <li class="nav-item">
             <router-link
               active-class="active"
               :to="`/${ lang }/guide`">{{ langConfig.guide }}
             </router-link>
-          </li>
+          </li> -->
           <li class="nav-item">
             <router-link
               active-class="active"
               :to="`/${ lang }/component`">{{ langConfig.components }}
             </router-link>
           </li>
-          <li 
+
+          <!-- 主题 -->
+          <!-- <li 
             class="nav-item nav-item-theme"
           >
             <router-link
               active-class="active"
               :to="`/${ lang }/theme`">{{ langConfig.theme }}
             </router-link>
-          </li>
-          <li class="nav-item">
+          </li> -->
+
+          <!-- 资源 -->
+          <!-- <li class="nav-item">
             <router-link
               active-class="active"
               :to="`/${ lang }/resource`"
               exact>{{ langConfig.resource }}
             </router-link>
-          </li>
+          </li> -->
 
-          <!-- gap -->
-          <li class="nav-item" v-show="isComponentPage">
+          <!-- gap分割线 -->
+          <!-- <li class="nav-item" v-show="isComponentPage">
             <div class="nav-gap"></div>
-          </li>
+          </li> -->
 
           <!-- 版本选择器 -->
-          <li class="nav-item nav-versions" v-show="isComponentPage">
+          <!-- <li class="nav-item nav-versions" v-show="isComponentPage">
             <el-dropdown
               trigger="click"
               class="nav-dropdown"
@@ -369,10 +376,10 @@
                 </el-dropdown-item>
               </el-dropdown-menu>
             </el-dropdown>
-          </li>
+          </li> -->
 
           <!-- 语言选择器 -->
-          <li class="nav-item lang-item">
+          <!-- <li class="nav-item lang-item">
             <el-dropdown
               trigger="click"
               class="nav-dropdown nav-lang"
@@ -393,7 +400,7 @@
                 </el-dropdown-item>
               </el-dropdown-menu>
             </el-dropdown>
-          </li>
+          </li> -->
         </ul>
       </div>
     </header>
